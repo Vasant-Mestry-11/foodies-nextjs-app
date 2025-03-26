@@ -4,14 +4,9 @@ import Link from "next/link";
 import classes from './main-header.module.css'
 import Image from 'next/image';
 import MainHeaderBackground from './main-header-background';
-import { usePathname } from 'next/navigation';
 import NavLinks from './nav-links';
 
 export default function MainHeader() {
-
-  const path = usePathname();
-
-  console.log(path)
 
   return <>
     <MainHeaderBackground />
