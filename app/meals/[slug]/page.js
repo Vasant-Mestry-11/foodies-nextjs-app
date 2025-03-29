@@ -4,7 +4,8 @@ import { getMeal } from '@/lib/meals'
 
 export default function MealsDetailPage({ params }) {
   const meal = getMeal(params.slug)
-  const { title, summary, instructions, creator_email, creator, image } = meal;
+  const { title, summary, creator_email, creator, image } = meal;
+  meal.instructions = meal.instructions.replace(/\n/g, '<br />')
   return <>
     <header className={classes.header}>
       <div className={classes.image}>
@@ -20,7 +21,7 @@ export default function MealsDetailPage({ params }) {
     </header>
     <main>
       <p className={classes.instructions} dangerouslySetInnerHTML={{
-        __html: instructions
+        __html: meal.instructions
       }}></p>
     </main>
   </>
