@@ -17,7 +17,7 @@ export default function ShareMealPage() {
         <div className={classes.row}>
           <p>
             <label htmlFor='name'>Your name</label>
-            <input type='text' id='name' required />
+            <input type='text' id='name' name='name' required />
           </p>
 
           <p>
