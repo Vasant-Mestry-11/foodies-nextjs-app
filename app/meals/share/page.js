@@ -27,18 +27,18 @@ export default function ShareMealPage() {
 
           <p>
             <label htmlFor='email'>Your email</label>
-            <input type='email' id='email' name='email' />
+            <input type='email' id='email' name='email' required />
           </p>
         </div>
 
         <p>
           <label htmlFor='title'>Title</label>
-          <input type='text' id='title' name='title' />
+          <input type='text' id='title' name='title' required />
         </p>
 
         <p>
           <label htmlFor='summary'>Short summary</label>
-          <input type='text' id='summary' name='summary' />
+          <input type='text' id='summary' name='summary' required />
         </p>
 
         <p>
