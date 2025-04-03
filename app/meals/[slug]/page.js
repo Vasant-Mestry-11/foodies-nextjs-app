@@ -3,6 +3,21 @@ import classes from './page.module.css'
 import { getMeal } from '@/lib/meals'
 import { notFound } from 'next/navigation'
 
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params
+  const meal = await getMeal(slug)
+
+  if (!meal) {
+    notFound(); // this behaviour changed in nextjs 15
+  }
+
+  return {
+    title: meal.title,
+    description: meal.summary
+  }
+}
+
 export default async function MealsDetailPage({ params }) {
   const { slug } = await params
   const meal = await getMeal(slug)
